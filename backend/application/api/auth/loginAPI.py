@@ -32,9 +32,13 @@ class LoginAPI(Resource):
         refresh_token = create_refresh_token(identity= user.user_id)
         access_token = create_access_token(identity=user.user_id)
         
+        
+        
         login_user(user)
         
-        return jsonify({'status': 'sucess', 'message': 'Sucessfully logged in', "refresh_token": refresh_token, "access_token":access_token})
+        # user_role = UserRoles.get.join(User, UserRoles.user_id == user.user_id).join(Role, UserRoles.role_id == Role.role_id).add_columns(Role.name)
+        
+        return jsonify({'status': 'sucess', 'message': 'Sucessfully logged in', "refresh_token": refresh_token, "access_token":access_token, "user_id": user.user_id, "user_mail": user.user_mail, "role": user.roles[0].name})
         
         
         

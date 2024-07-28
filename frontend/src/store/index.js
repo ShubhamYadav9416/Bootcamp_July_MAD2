@@ -37,7 +37,7 @@ export default new Vuex.Store({
             if (localStorage.getItem('store')){
                 console.log("App creating. Store available in local storeage")
                 this.replaceState(
-                    object.assign(state, JSON.parse(localStorage.getItem('store')))
+                    Object.assign(state, JSON.parse(localStorage.getItem('store')))
                 )
             }
         },

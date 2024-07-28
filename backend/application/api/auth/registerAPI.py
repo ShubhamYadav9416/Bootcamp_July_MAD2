@@ -14,6 +14,7 @@ user_post_args.add_argument('role', type= str, required = True, help= "role is r
 
 class RegisterAPI(Resource):
     def post(resource):
+        print("hello")
         args = user_post_args.parse_args()
         user_mail = args.get("user_mail")
         password = args.get("password")

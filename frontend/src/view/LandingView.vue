@@ -1,5 +1,6 @@
 <template>
     <div>
+<AuthHeader></AuthHeader>
         <div class="container text-center">
             <div class="row">
                 <div class="col-2">
@@ -15,6 +16,8 @@
                                 <router-link to="/register"><b-button variant="outline-primary">Register page</b-button></router-link>
                                 
                             </div>
+
+                            
                         </div>
                     </div>
                 </div>
@@ -26,10 +29,13 @@
 </template>
 
 <script>
-
+import AuthHeader from '@/components/AuthHeader.vue';
 
 export default {
     name: "LandingPage",
+    components:{
+        AuthHeader
+    }
 }
 
 </script>
